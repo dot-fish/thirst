@@ -1,23 +1,31 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import moment from 'moment'
 
 class CountDown extends Component {
   constructor(props) {
-    super(props);
-    this.state = {  }
+    super(props)
+    this.state = {}
   }
-  render() { 
-    var eventTime= 1366549200; // Timestamp - Sun, 21 Apr 2013 13:00:00 GMT
-var currentTime = 1366547400; // Timestamp - Sun, 21 Apr 2013 12:30:00 GMT
-var diffTime = eventTime - currentTime;
-var duration = moment.duration(diffTime*1000, 'milliseconds');
-var interval = 1000;
+  render() {
+    /**
+     * @description DAY ZERO SOUTH AFRICA
+     * @see http://www.timestampgenerator.com/1528156800/#result
+    */
+    const eventTime = 1528156800
+    let currentTime = moment.now()
+    let diffTime = currentTime - eventTime
+    let duration = moment.duration(diffTime * 1000, 'milliseconds')
+    let interval = 1000
 
-setInterval(function(){
-  duration = moment.duration(duration - interval, 'milliseconds');
-    $('.countdown').text(duration.hours() + ":" + duration.minutes() + ":" + duration.seconds())
-}, interval);
-    return (  )
+    setInterval(function() {
+      duration = moment.duration(duration - interval, 'milliseconds')
+      let hours = duration.hours()
+      let minutes = duration.minutes()
+      let seconds = duration.seconds()
+      console.log(duration, hours, minutes, seconds)
+    }, interval)
+    return <div className="countdown" />
   }
 }
- 
-export default CountDown;
+
+export default CountDown
