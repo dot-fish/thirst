@@ -5,6 +5,8 @@ class CountDown extends Component {
     const interval = 1000
     let now = 8
 
+    console.log(Date.now())
+
     setInterval(() => {
       let next = now - 1
       console.log(next)
