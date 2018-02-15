@@ -14,7 +14,9 @@
   - because react is da bee's knees
 - styled-components
   - better styling in js
-- node-sass chokadir
+- styled-normalize
+- node-sass-chokadir
+- prettier
 
 ---
 
