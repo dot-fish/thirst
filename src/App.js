@@ -12,6 +12,10 @@ import CountDown from './CountDown'
  */
 injectGlobal`
   ${styledNormalize}
+
+  body {
+    background: black;
+  }
 `
 
 class App extends Component {
