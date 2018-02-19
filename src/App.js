@@ -4,6 +4,7 @@ import styled, { injectGlobal } from 'styled-components'
 import styledNormalize from 'styled-normalize'
 
 import Africa from './Africa'
+import CountDown from './CountDown'
 
 /**
  * globally injected style scripts. will eventually replace App/index.css
@@ -11,12 +12,19 @@ import Africa from './Africa'
  */
 injectGlobal`
   ${styledNormalize}
+
+  body {
+    background: black;
+  }
 `
 
 class App extends Component {
   render() {
     return (
-      <Africa />
+      <div>
+        <Africa />
+        <CountDown />
+      </div>
     )
   }
 }
